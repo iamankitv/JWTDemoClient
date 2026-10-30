@@ -1,0 +1,237 @@
+.home-page {
+  background:
+    radial-gradient(ellipse at 86% 16%, rgb(101 117 234 / 12%), transparent 27rem),
+    #f6f7fb;
+  box-sizing: border-box;
+  color: #17213a;
+  display: flex;
+  flex-direction: column;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+  padding: 0 clamp(22px, 7vw, 104px);
+}
+
+.home-page *,
+.home-page *::before,
+.home-page *::after {
+  box-sizing: inherit;
+}
+
+.topbar {
+  align-items: center;
+  border-bottom: 1px solid #e8ebf3;
+  display: flex;
+  height: 82px;
+  justify-content: space-between;
+}
+
+.brand {
+  align-items: center;
+  color: #1d2942;
+  display: inline-flex;
+  font-size: 17px;
+  font-weight: 750;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  align-items: center;
+  background: #5364df;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 14px;
+  height: 34px;
+  justify-content: center;
+  width: 34px;
+}
+
+.logout-button {
+  background: #fff;
+  border: 1px solid #dfe4ee;
+  border-radius: 9px;
+  color: #34405a;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  padding: 10px 16px;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.logout-button:hover {
+  background: #f9faff;
+  border-color: #cbd2e2;
+}
+
+.welcome-section {
+  margin: clamp(62px, 10vh, 112px) auto 60px;
+  max-width: 720px;
+  width: 100%;
+}
+
+.eyebrow {
+  color: #6574e8;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 1.5px;
+  margin: 0 0 13px;
+}
+
+.welcome-section h1 {
+  color: #17213a;
+  font-size: clamp(34px, 5vw, 48px);
+  letter-spacing: -1.6px;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.welcome-copy {
+  color: #748099;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 15px 0 32px;
+  max-width: 500px;
+}
+
+.product-disclosure {
+  width: 100%;
+}
+
+.show-product-button {
+  align-items: center;
+  background: #5364df;
+  border-radius: 9px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 700;
+  justify-content: center;
+  list-style: none;
+  min-height: 48px;
+  padding: 0 21px;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.show-product-button::-webkit-details-marker {
+  display: none;
+}
+
+.show-product-button::marker {
+  content: "";
+}
+
+.show-product-button:hover {
+  background: #4354d0;
+}
+
+.show-product-button:active {
+  transform: translateY(1px);
+}
+
+.show-product-button:focus-visible,
+.logout-button:focus-visible {
+  outline: 3px solid rgb(102 117 234 / 35%);
+  outline-offset: 3px;
+}
+
+.product-disclosure[open] .show-product-button {
+  margin-bottom: 18px;
+}
+
+.product-table-wrap {
+  background: #fff;
+  border: 1px solid #e8ebf3;
+  border-radius: 16px;
+  box-shadow: 0 16px 42px rgb(30 43 84 / 8%);
+  overflow-x: auto;
+}
+
+.product-table {
+  border-collapse: collapse;
+  min-width: 620px;
+  text-align: left;
+  width: 100%;
+}
+
+.product-table th,
+.product-table td {
+  border-bottom: 1px solid #edf0f5;
+  padding: 16px 20px;
+}
+
+.product-table th {
+  background: #f9faff;
+  color: #52607a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.product-table th:first-child {
+  border-top-left-radius: 16px;
+}
+
+.product-table th:last-child {
+  border-top-right-radius: 16px;
+}
+
+.product-table td {
+  color: #34405a;
+  font-size: 13px;
+}
+
+.product-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.product-table .empty-state {
+  color: #929bad;
+  padding: 32px 20px;
+  text-align: center;
+}
+
+.home-footer {
+  border-top: 1px solid #e8ebf3;
+  color: #929bad;
+  font-size: 12px;
+  margin: auto 0 0;
+  padding: 20px 0;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-page {
+    padding: 0 22px;
+  }
+
+  .topbar {
+    height: 72px;
+  }
+
+  .welcome-section {
+    margin-top: 68px;
+  }
+
+  .welcome-copy {
+    font-size: 15px;
+  }
+
+  .product-table th,
+  .product-table td {
+    padding: 14px 16px;
+  }
+}

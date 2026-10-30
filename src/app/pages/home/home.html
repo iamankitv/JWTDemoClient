@@ -1,0 +1,56 @@
+<main class="home-page">
+    <header class="topbar">
+        <a class="brand" href="#" aria-label="Home">
+            <span class="brand-mark" aria-hidden="true">A</span>
+            <span>Authentication Demo</span>
+        </a>
+        <button class="logout-button" (click)="logout()">Log out</button>
+    </header>
+
+    <section class="welcome-section" aria-labelledby="welcome-title">
+        <p class="eyebrow">YOUR SPACE</p>
+        <h1 id="welcome-title">Welcome home</h1>
+        <p class="welcome-copy">
+            Everything you need, all in one place. Take a look at what we have for you.
+        </p>
+
+
+        <button class="show-product-button" (click)="fetchProducts()" 
+        (click)="toggleProducts()">
+         {{showProducts() ? 'Hide Products' : 'Show Products'}}
+        </button>
+        @if (isDataAvailable() && showProducts()) {
+        <div class="product-table-wrap">
+            <table class="product-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Product ID</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (product of products(); track $index) {
+                    <tr>
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.price }}</td>
+                    </tr>
+                    }
+                    @empty {
+                    <tr>
+                        <td colspan="4">No products found.</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        }
+
+
+    </section>
+
+    <footer class="home-footer">A simpler way to get things done.</footer>
+</main>

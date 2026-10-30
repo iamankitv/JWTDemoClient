@@ -1,3 +1,12 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    {path:'', pathMatch:'full',redirectTo:'login'},
+    {path:'login', loadComponent:()=>import('./auth/login/login').then(m=>m.Login)},
+    {path:'home',loadComponent:()=>import('./pages/home/home').then(m=>m.Home)},
+    {
+        path:'signin-google',
+         loadComponent:()=>import('./auth/oauth-callback/oauth-callback')
+         .then(m=>m.OAuthCallbackComponent)
+    }
+];
